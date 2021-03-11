@@ -18,6 +18,8 @@ from tqdm import tqdm
 import ast
 import metrics
 from sem_valid import semValidGen
+from old_sem_valid import noSemValidGen
+import pdb
 
 """
 Modeling logic for a generative model of ShapeAssembly Programs. 
@@ -560,7 +562,11 @@ def run_eval_decoder(h0, decoder, rejection_sample, gt_prog = None):
         preds, prog_out, next_q = semValidGen(
             prog, decoder, h, hier_ind, MAX_PLINES, INPUT_DIM, device, gt_prog, rejection_sample
         )
-        
+
+        #preds, prog_out, next_q = noSemValidGen(
+            #prog, decoder, h, hier_ind, MAX_PLINES, INPUT_DIM, device, gt_prog
+        #)
+
         num_lines += len(preds)
         
         q += next_q

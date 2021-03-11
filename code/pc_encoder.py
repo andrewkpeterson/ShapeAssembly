@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from collections import namedtuple
 import etw_pytorch_utils as pt_utils
-from pointnet2.utils.pointnet2_modules import PointnetSAModule
+#from pointnet2.utils.pointnet2_modules import PointnetSAModule
 
 class PCEncoder(nn.Module):
     r"""
